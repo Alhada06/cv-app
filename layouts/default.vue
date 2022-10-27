@@ -1,7 +1,15 @@
 <script setup>
 import { loadFull } from "tsparticles";
-import TheNavbar from "~~/components/TheNavbar.vue";
 
+const nav = ref(null);
+const targetIsVisible = ref(false)
+
+const { stop } = useIntersectionObserver(
+    nav,
+    ([{ isIntersecting }], observerElement) => {
+        targetIsVisible.value = isIntersecting
+    },
+)
 
 const options = {
     background: {
@@ -99,9 +107,14 @@ const particlesInit = async (engine) => {
         <Particles id="tsparticles" :options="options" :particles-init="particlesInit" />
     </div>
     <div>
-        <TheNavbar />
+        <TheNavbar ref="nav" />
+        <TheSidebar :is-sidebar-visible="!targetIsVisible">
 
-        <slot />
+            <slot />
+
+        </TheSidebar>
+
+
     </div>
 
 </template>

@@ -8,6 +8,9 @@ export default defineNuxtConfig({
             autoprefixer:{},
         }
     },
+    modules: [
+        '@vueuse/nuxt',
+      ],
   
 
 })
