@@ -8,6 +8,7 @@ const { stop } = useIntersectionObserver(
     nav,
     ([{ isIntersecting }], observerElement) => {
         targetIsVisible.value = isIntersecting
+        // console.log(observerElement)
     },
 )
 
