@@ -20,8 +20,7 @@ const test = () => {
         <Transition mode="out-in" :duration="400" name="fade">
             <aside v-if="isSidebarVisible" class="w-1/12  lg:w-1/6 ">
 
-                <div
-                    class="sticky bg-gradient-to-r  p-6 pl-8 rounded-l-lg from-bgblue via-bgbluelighter bg-opacity-70 top-5 left-0 pr-2">
+                <div class="sticky backdrop-blur-sm bg-opacity-70 top-5 left-0 pr-2">
                     <NuxtLink v-for="(header, index) in headers" :key="header" :to="'/#' + index"
                         class="block  pl-2 m-1 text-white no-underline"
                         :class="{ 'border-blue-500 border-l-2 rounded-l-xl  border-solid': route.fullPath === '/#' + index }">

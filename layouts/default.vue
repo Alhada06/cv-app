@@ -104,18 +104,21 @@ const particlesInit = async (engine) => {
 </script>
 
 <template>
-    <div class="relative -z-10">
-        <Particles id="tsparticles" :options="options" :particles-init="particlesInit" />
-    </div>
     <div>
-        <TheNavbar ref="nav" />
-        <TheSidebar :is-sidebar-visible="!targetIsVisible">
+        <div class="relative -z-10">
+            <ClientOnly>
+                <Particles id="tsparticles" :options="options" :particles-init="particlesInit" />
+            </ClientOnly>
+        </div>
+        <div>
+            <TheNavbar ref="nav" />
+            <TheSidebar :is-sidebar-visible="!targetIsVisible">
 
-            <slot />
+                <slot />
 
-        </TheSidebar>
+            </TheSidebar>
 
 
+        </div>
     </div>
-
 </template>
