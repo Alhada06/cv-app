@@ -16,26 +16,29 @@ const test = () => {
 </script>
 
 <template>
-    <main class="flex  pt-8">
+    <main class="grid grid-cols-6 gap-2 pt-8 ">
         <Transition mode="out-in" :duration="400" name="fade">
-            <aside v-if="isSidebarVisible" class="w-1/12  lg:w-1/6 ">
+            <aside v-if="isSidebarVisible" class=" invisible md:visible w-full  ">
 
-                <div class="sticky backdrop-blur-sm bg-opacity-70 top-5 left-0 pr-2">
+                <div class="sticky backdrop-blur-sm bg-opacity-70  rounded-l-lg top-5 left-0 pr-2 p-6 pl-8">
                     <NuxtLink v-for="(header, index) in headers" :key="header" :to="'/#' + index"
-                        class="block  pl-2 m-1 text-white no-underline"
-                        :class="{ 'border-blue-500 border-l-2 rounded-l-xl  border-solid': route.fullPath === '/#' + index }">
+                        class="block  pl-2 m-1 w-fit text-white no-underline"
+                        :class="{ 'border-blue-500 border-b-2 rounded-l-xl  border-solid': route.fullPath === '/#' + index }">
                         {{
-                                header
+        header
                         }}</NuxtLink>
-                    <div @click="test">test</div>
+
 
                 </div>
 
             </aside>
 
-            <div v-else class="w-1/12  lg:w-1/6"></div>
+            <div v-else class="w-1/12  md:w-1/6"></div>
         </Transition>
-        <slot />
+        <div class=" col-start-1 col-end-7 md:col-start-2 md:col-end-6 ">
+            <slot />
+        </div>
+
     </main>
 
 </template>
