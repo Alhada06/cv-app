@@ -11,6 +11,9 @@ export default defineNuxtConfig({
     modules: [
         '@vueuse/nuxt',
       ],
+      router:{
+        base:'cv-app'
+      }
 
       
       
