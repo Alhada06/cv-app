@@ -24,10 +24,10 @@ const { stop } = useIntersectionObserver(
 <template>
     <div>
         <!-- <NuxtLink to="/#2"> teste link</NuxtLink> -->
-        <article class="mb-[500px] w-9/12 backdrop-blur-sm">
-            <h1 ref="head" class="py-4 text-4xl text-white">My article</h1>
+        <article class="mb-[500px] scroll-pt-16  backdrop-blur-sm">
+            <h1 ref="head" class="py-4 pl-8 ml-4  text-4xl text-white">My article</h1>
             <section v-for="(header, index) in headers" :key="header" class=" m-4 p-8  backdrop-blur-sm rounded-lg">
-                <h2 ref="section" @click="test" :id="index" class="py-4 text-2xl   text-slate-200">
+                <h2 ref="section" @click="test" :id="index" class="py-4 text-2xl pt-10  text-slate-200">
                     {{ header }}
                 </h2>
                 <p class=" text-white text-justify">
