@@ -106,9 +106,9 @@ const particlesInit = async (engine) => {
 <template>
     <div>
         <div class="relative -z-10">
-            <ClientOnly>
-                <Particles id="tsparticles" :options="options" :particles-init="particlesInit" />
-            </ClientOnly>
+
+            <Particles :options="options" :particles-init="particlesInit" id="tsparticles" />
+
         </div>
         <div>
             <TheNavbar ref="nav" />

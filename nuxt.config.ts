@@ -12,8 +12,9 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
       ],
       router:{
-        base:'cv-app'
-      }
+        base:'/cv-app/'
+      },
+      // ssr:false,
 
       
       
