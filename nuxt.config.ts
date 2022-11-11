@@ -1,5 +1,10 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  target:'static',
+  router:{
+        base:'/cv-app/'
+      },
+
     css:["assets/css/main.css"],
 
     postcss:{
@@ -11,9 +16,7 @@ export default defineNuxtConfig({
     modules: [
         '@vueuse/nuxt',
       ],
-      router:{
-        base:'/cv-app/'
-      },
+    
       // ssr:false,
 
       
